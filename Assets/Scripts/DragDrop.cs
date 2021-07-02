@@ -7,7 +7,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 {
     RectTransform recTransform;
     CanvasGroup canvasGroup;
-  
+    public ItemSlot.TypeOfPuzzle typeOfPuzzle;
+    private Vector2 startAnchoredPosition;
+
     private void Start()
     {
         recTransform = GetComponent<RectTransform>();
@@ -16,6 +18,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
+        startAnchoredPosition = recTransform.anchoredPosition;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -32,6 +35,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnPointerDown(PointerEventData eventData)
     {
        
+    }
+
+    public void ReturnToStartPosition()
+    {
+        recTransform.anchoredPosition = startAnchoredPosition;
+        print("Here");
     }
 
 
