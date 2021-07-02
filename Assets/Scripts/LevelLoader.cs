@@ -11,14 +11,6 @@ public class LevelLoader : MonoBehaviour
 
     public PuzzleScroller puzzleScroller;
 
-    //public int countOfPuzzleOnLevel;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-      
-    }
-
     public void LoadLeavel(int numOfLoadingLevel)
     {
         this.numOfLoadingLevel = numOfLoadingLevel;

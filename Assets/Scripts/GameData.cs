@@ -21,7 +21,6 @@ public class GameData : MonoBehaviour
         canvasScaleFactor = canvas.scaleFactor;
     }
 
-  
 
     public void AddCollectedPuzzle()
     {
@@ -31,6 +30,7 @@ public class GameData : MonoBehaviour
             uiManager.WinningAction();
         }
     }
+
 
     public void CleanDataOfLevel()
     {

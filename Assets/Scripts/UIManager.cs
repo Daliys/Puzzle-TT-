@@ -15,13 +15,6 @@ public class UIManager : MonoBehaviour
     public GameObject finalPanel;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-  
     public void LoadingPanleOnClickPlayButton()
     {
         loadingPanel.SetActive(false);
