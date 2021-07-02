@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler 
+public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler 
 {
     RectTransform recTransform;
     CanvasGroup canvasGroup;
@@ -28,19 +28,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //throw new System.NotImplementedException();
         canvasGroup.blocksRaycasts = true;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-       
     }
 
     public void ReturnToStartPosition()
     {
         recTransform.anchoredPosition = startAnchoredPosition;
-        print("Here");
     }
 
 

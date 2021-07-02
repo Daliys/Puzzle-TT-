@@ -25,12 +25,12 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 eventData.pointerDrag.GetComponent<RectTransform>().offsetMax = GetComponent<RectTransform>().offsetMax;
 
                 eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+                eventData.pointerDrag.GetComponent<Animator>().SetTrigger("IsRight");
 
                 GameData.instantiate.AddCollectedPuzzle();
             }
             else
             {
-
                 eventData.pointerDrag.GetComponent<RectTransform>().anchorMax = GetComponent<RectTransform>().anchorMax;
                 eventData.pointerDrag.GetComponent<RectTransform>().anchorMin = GetComponent<RectTransform>().anchorMin;
 
@@ -38,6 +38,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
                 eventData.pointerDrag.GetComponent<RectTransform>().offsetMin = new Vector2(GetComponent<RectTransform>().offsetMin.x + randOfset.x, GetComponent<RectTransform>().offsetMin.y + randOfset.y);
                 eventData.pointerDrag.GetComponent<RectTransform>().offsetMax = new Vector2(GetComponent<RectTransform>().offsetMax.x + randOfset.x, GetComponent<RectTransform>().offsetMin.y + randOfset.y);
+
+                eventData.pointerDrag.GetComponent<Animator>().SetTrigger("IsWrong");
 
             }
         }
